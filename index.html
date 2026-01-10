@@ -1,43 +1,227 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Datenschutz - Budget App</title>
+    <title>Aurum - Privacy & Support</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 40px auto; padding: 20px; background-color: #f5f5f7; }
-        .card { background: white; padding: 40px; border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        h1 { color: #000; font-size: 28px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        h2 { color: #0071e3; font-size: 20px; margin-top: 25px; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: #1d1d1f; 
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 20px; 
+            background-color: #f5f5f7; 
+        }
+        .card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: 18px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+            position: relative;
+        }
+        
+        /* Language Selector Styling */
+        .lang-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        select {
+            padding: 8px 12px;
+            border-radius: 12px;
+            border: 1px solid #d2d2d7;
+            background-color: #fafafa;
+            font-size: 13px;
+            color: #333;
+            cursor: pointer;
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+            padding-right: 30px;
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23333%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            background-size: 10px auto;
+        }
+
+        h1 { color: #1d1d1f; font-size: 28px; border-bottom: 1px solid #d2d2d7; padding-bottom: 15px; margin-top: 0; padding-right: 60px; }
+        h2 { color: #0071e3; font-size: 20px; margin-top: 30px; }
         p { margin-bottom: 15px; }
-        .footer { margin-top: 30px; font-size: 12px; color: #888; text-align: center; }
-        /* Schutz-Stil für E-Mail: Dreht den Text visuell um */
+        .footer { margin-top: 40px; font-size: 12px; color: #86868b; text-align: center; border-top: 1px solid #eee; padding-top: 20px;}
+        
+        /* Schutz-Stil für E-Mail */
         .email-protection { unicode-bidi: bidi-override; direction: rtl; cursor: pointer; color: #0071e3; }
+
+        @media (max-width: 600px) {
+            .card { padding: 25px; }
+            h1 { font-size: 24px; padding-right: 0; margin-top: 40px;}
+            .lang-container { top: 15px; right: 15px; }
+        }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>Datenschutzerklärung und Support</h1>
-        <p>Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten innerhalb meiner App "Aurum - Klarheit über dein Geld" auf.</p>
+        <div class="lang-container">
+            <select id="language-selector" onchange="changeLanguage(this.value)">
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+                <option value="fr">Français</option>
+                <option value="it">Italiano</option>
+                <option value="es">Español</option>
+            </select>
+        </div>
 
-        <h2>1. Support</h2>
-        <p>Benötigen Sie Hilfe oder haben Sie allgemeine Fragen zur App? Sie können mir jederzeit eine E-Mail schreiben:</p>
-        <p>E-Mail: <span class="email-protection">moc.duolci@pohs_uh.uj</span></p>
+        <h1 id="title">Privacy Policy and Support</h1>
+        <p id="intro">This privacy policy explains the type, scope, and purpose of the processing of personal data within my app "Aurum - Clarity about money".</p>
 
-        <h2>2. Datenspeicherung</h2>
-        <p>Sämtliche von Ihnen eingegebenen Budgetdaten werden ausschliesslich lokal auf Ihrem Gerät oder in Ihrem persönlichen iCloud-Speicher gesichert. Ich habe zu keinem Zeitpunkt Zugriff auf Ihre Finanzdaten.</p>
+        <h2 id="h-support">1. Support</h2>
+        <p id="p-support-1">Do you need help or have general questions about the app? You can email me at any time:</p>
+        <p><span id="label-email-1">Email:</span> <span class="email-protection">moc.duolci@pohs_uh.uj</span></p>
 
-        <h2>3. Analysedaten (TestFlight)</h2>
-        <p>Während der Beta-Phase über TestFlight werden Absturzberichte und Nutzungsinformationen an Apple und mich übermittelt, um die App zu verbessern. Dies ist eine Standardfunktion von Apple TestFlight.</p>
+        <h2 id="h-storage">2. Data Storage</h2>
+        <p id="p-storage">All budget data entered by you is saved exclusively locally on your device or in your personal iCloud storage. I do not have access to your financial data at any time.</p>
 
-        <h2>4. Kontakt (Datenschutz)</h2>
-        <p>Bei spezifischen Fragen zum Thema Datenschutz wenden Sie sich bitte an:</p>
-        <p>E-Mail: <span class="email-protection">moc.duolci@pohs_uh.uj</span></p>
+        <h2 id="h-analytics">3. Analytics (TestFlight)</h2>
+        <p id="p-analytics">During the beta phase via TestFlight, crash reports and usage information are transmitted to Apple and me to improve the app. This is a standard feature of Apple TestFlight.</p>
+
+        <h2 id="h-contact">4. Contact (Privacy)</h2>
+        <p id="p-contact-1">For specific questions regarding data privacy, please contact:</p>
+        <p><span id="label-email-2">Email:</span> <span class="email-protection">moc.duolci@pohs_uh.uj</span></p>
 
         <div class="footer">
-            &copy; 2026 Aurum - Klarheit über dein Geld | Erstellt für den App Store mit SwiftUI in Switzerland 🇨🇭
+            <span id="footer-text">&copy; 2026 Aurum - Clarity about money | Made for the App Store with SwiftUI in Switzerland 🇨🇭</span>
         </div>
     </div>
+
+    <script>
+        // Translations Object
+        const translations = {
+            de: {
+                title: "Datenschutzerklärung und Support",
+                intro: "Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten innerhalb meiner App \"Aurum - Klarheit über Geld\" auf.",
+                h_support: "1. Support",
+                p_support_1: "Benötigen Sie Hilfe oder haben Sie allgemeine Fragen zur App? Sie können mir jederzeit eine E-Mail schreiben:",
+                label_email_1: "E-Mail:",
+                h_storage: "2. Datenspeicherung",
+                p_storage: "Sämtliche von Ihnen eingegebenen Budgetdaten werden ausschliesslich lokal auf Ihrem Gerät oder in Ihrem persönlichen iCloud-Speicher gesichert. Ich habe zu keinem Zeitpunkt Zugriff auf Ihre Finanzdaten.",
+                h_analytics: "3. Analysedaten (TestFlight)",
+                p_analytics: "Während der Beta-Phase über TestFlight werden Absturzberichte und Nutzungsinformationen an Apple und mich übermittelt, um die App zu verbessern. Dies ist eine Standardfunktion von Apple TestFlight.",
+                h_contact: "4. Kontakt (Datenschutz)",
+                p_contact_1: "Bei spezifischen Fragen zum Thema Datenschutz wenden Sie sich bitte an:",
+                label_email_2: "E-mail:",
+                footer_text: "&copy; 2026 Aurum - Klarheit über Geld | Erstellt für den App Store mit SwiftUI in Switzerland 🇨🇭"
+            },
+            en: {
+                title: "Privacy Policy and Support",
+                intro: "This privacy policy explains the nature, scope, and purpose of the processing of personal data within my app \"Aurum - Clarity about money\".",
+                h_support: "1. Support",
+                p_support_1: "Do you need help or have general questions about the app? You can email me at any time:",
+                label_email_1: "Email:",
+                h_storage: "2. Data Storage",
+                p_storage: "All budget data entered by you is stored exclusively locally on your device or in your personal iCloud storage. I do not have access to your financial data at any time.",
+                h_analytics: "3. Analytics (TestFlight)",
+                p_analytics: "During the beta phase via TestFlight, crash reports and usage information are transmitted to Apple and myself to improve the app. This is a standard feature of Apple TestFlight.",
+                h_contact: "4. Contact (Privacy)",
+                p_contact_1: "For specific questions regarding data privacy, please contact:",
+                label_email_2: "Email:",
+                footer_text: "&copy; 2026 Aurum - Clarity about money | Made for the App Store with SwiftUI in Switzerland 🇨🇭"
+            },
+            fr: {
+                title: "Politique de confidentialité et Support",
+                intro: "Cette politique de confidentialité explique la nature, l'étendue et la finalité du traitement des données personnelles au sein de mon application \"Aurum - La clarté sur l'argent\".",
+                h_support: "1. Support",
+                p_support_1: "Avez-vous besoin d'aide ou avez-vous des questions générales sur l'application ? Vous pouvez m'envoyer un e-mail à tout moment :",
+                label_email_1: "E-mail :",
+                h_storage: "2. Stockage des données",
+                p_storage: "Toutes les données budgétaires saisies sont enregistrées exclusivement localement sur votre appareil ou dans votre stockage iCloud personnel. Je n'ai à aucun moment accès à vos données financières.",
+                h_analytics: "3. Analyse (TestFlight)",
+                p_analytics: "Pendant la phase bêta via TestFlight, des rapports de plantage et des informations d'utilisation sont transmis à Apple et à moi-même afin d'améliorer l'application. Il s'agit d'une fonctionnalité standard d'Apple TestFlight.",
+                h_contact: "4. Contact (Confidentialité)",
+                p_contact_1: "Pour des questions spécifiques concernant la protection des données, veuillez contacter :",
+                label_email_2: "E-mail :",
+                footer_text: "&copy; 2026 Aurum - La clarté sur l'argent | Fait pour l'App Store avec SwiftUI en Suisse 🇨🇭"
+            },
+            it: {
+                title: "Informativa sulla privacy e Supporto",
+                intro: "Questa informativa sulla privacy spiega la natura, l'ambito e lo scopo del trattamento dei dati personali all'interno della mia app \"Aurum - Chiarezza sul denaro\".",
+                h_support: "1. Supporto",
+                p_support_1: "Hai bisogno di aiuto o hai domande generali sull'app? Puoi inviarmi un'e-mail in qualsiasi momento:",
+                label_email_1: "E-mail:",
+                h_storage: "2. Archiviazione dati",
+                p_storage: "Tutti i dati di budget inseriti vengono salvati esclusivamente in locale sul tuo dispositivo o nel tuo spazio di archiviazione iCloud personale. Non ho accesso ai tuoi dati finanziari in nessun momento.",
+                h_analytics: "3. Analisi (TestFlight)",
+                p_analytics: "Durante la fase beta tramite TestFlight, i rapporti sugli arresti anomali e le informazioni sull'utilizzo vengono trasmessi ad Apple e a me per migliorare l'app. Questa è una funzionalità standard di Apple TestFlight.",
+                h_contact: "4. Contatto (Privacy)",
+                p_contact_1: "Per domande specifiche sulla protezione dei dati, si prega di contattare:",
+                label_email_2: "E-mail:",
+                footer_text: "&copy; 2026 Aurum - Chiarezza sul denaro | Realizzato per l'App Store con SwiftUI in Svizzera 🇨🇭"
+            },
+            es: {
+                title: "Política de Privacidad y Soporte",
+                intro: "Esta política de privacidad explica la naturaleza, el alcance y el propósito del procesamiento de datos personales dentro de mi aplicación \"Aurum - Claridad sobre el dinero\".",
+                h_support: "1. Soporte",
+                p_support_1: "¿Necesitas ayuda o tienes preguntas generales sobre la aplicación? Puedes enviarme un correo electrónico en cualquier momento:",
+                label_email_1: "Correo electrónico:",
+                h_storage: "2. Almacenamiento de datos",
+                p_storage: "Todos los datos de presupuesto ingresados se guardan exclusivamente de forma local en tu dispositivo o en tu almacenamiento personal de iCloud. No tengo acceso a tus datos financieros en ningún momento.",
+                h_analytics: "3. Análisis (TestFlight)",
+                p_analytics: "Durante la fase beta a través de TestFlight, los informes de fallos y la información de uso se transmiten a Apple y a mí para mejorar la aplicación. Esta es una función estándar de Apple TestFlight.",
+                h_contact: "4. Contacto (Privacidad)",
+                p_contact_1: "Para preguntas específicas sobre la protección de datos, por favor contacta a:",
+                label_email_2: "Correo electrónico:",
+                footer_text: "&copy; 2026 Aurum - Claridad sobre el dinero | Hecho para la App Store con SwiftUI en Suiza 🇨🇭"
+            }
+        };
+
+        function changeLanguage(lang) {
+            // Fallback to English if language not found
+            if (!translations[lang]) lang = 'en';
+
+            const t = translations[lang];
+
+            // Update DOM elements
+            document.getElementById('title').textContent = t.title;
+            document.getElementById('intro').textContent = t.intro;
+            
+            document.getElementById('h-support').textContent = t.h_support;
+            document.getElementById('p-support-1').textContent = t.p_support_1;
+            document.getElementById('label-email-1').textContent = t.label_email_1;
+            
+            document.getElementById('h-storage').textContent = t.h_storage;
+            document.getElementById('p-storage').textContent = t.p_storage;
+            
+            document.getElementById('h-analytics').textContent = t.h_analytics;
+            document.getElementById('p-analytics').textContent = t.p_analytics;
+            
+            document.getElementById('h-contact').textContent = t.h_contact;
+            document.getElementById('p-contact-1').textContent = t.p_contact_1;
+            document.getElementById('label-email-2').textContent = t.label_email_2;
+            
+            // Allow HTML in footer (for the copy symbol and flag)
+            document.getElementById('footer-text').innerHTML = t.footer_text;
+
+            // Update html lang attribute
+            document.documentElement.lang = lang;
+            
+            // Update dropdown selector
+            document.getElementById('language-selector').value = lang;
+        }
+
+        // Auto-detect language on load
+        document.addEventListener('DOMContentLoaded', () => {
+            const userLang = navigator.language || navigator.userLanguage; 
+            const langCode = userLang.substring(0, 2); // Get "de", "en", "fr" etc.
+            
+            if (translations[langCode]) {
+                changeLanguage(langCode);
+            } else {
+                changeLanguage('en'); // Default to English
+            }
+        });
+    </script>
 </body>
 </html>
