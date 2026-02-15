@@ -76,24 +76,28 @@
         </div>
 
         <h1 id="title">Privacy Policy and Support</h1>
-        <p id="intro">This privacy policy explains the type, scope, and purpose of the processing of personal data within my app "Aurum - Clarity about money".</p>
+        <p id="intro">This privacy policy explains the type, scope, and purpose of the processing of personal data within my app "Aurum - Budget & Expenses".</p>
 
         <h2 id="h-support">1. Support</h2>
         <p id="p-support-1">Do you need help or have general questions about the app? You can email me at any time:</p>
         <p><span id="label-email-1">Email:</span> <span class="email-protection">moc.duolci@pohs_uh.uj</span></p>
 
-        <h2 id="h-storage">2. Data Storage</h2>
+        <h2 id="h-tech-support">2. Technical Support & Diagnostics</h2>
+        <p id="p-tech-support-1">When using the "Support" feature, a technical support file is generated, which the user sends voluntarily. This file is used exclusively for error analysis and contains only technical diagnostic information (e.g., App/OS version, device class, language/region, time zone, technical status/timestamps, function counters, technical UI flow logs).</p>
+        <p id="p-tech-support-2">The file contains <strong>no financial content</strong> (no amounts, no expense descriptions/notes, no category/label names, no export/import data). Generation and transmission occur only upon active user action; no transmission takes place without the user sending the file. The recipient is the specified support address; the file is processed solely for handling the support case and is deleted as soon as it is no longer required.</p>
+
+        <h2 id="h-storage">3. Data Storage</h2>
         <p id="p-storage">All budget data entered by you is saved exclusively locally on your device or in your personal iCloud storage. I do not have access to your financial data at any time.</p>
 
-        <h2 id="h-analytics">3. Analytics (TestFlight)</h2>
+        <h2 id="h-analytics">4. Analytics (TestFlight)</h2>
         <p id="p-analytics">During the beta phase via TestFlight, crash reports and usage information are transmitted to Apple and me to improve the app. This is a standard feature of Apple TestFlight.</p>
 
-        <h2 id="h-contact">4. Contact (Privacy)</h2>
+        <h2 id="h-contact">5. Contact (Privacy)</h2>
         <p id="p-contact-1">For specific questions regarding data privacy, please contact:</p>
         <p><span id="label-email-2">Email:</span> <span class="email-protection">moc.duolci@pohs_uh.uj</span></p>
 
         <div class="footer">
-            <span id="footer-text">&copy; 2026 Aurum - Clarity about money | Made for the App Store with SwiftUI in Switzerland 🇨🇭</span>
+            <span id="footer-text">&copy; 2026 Aurum – Budget & Expenses | Made for the App Store with SwiftUI in Switzerland 🇨🇭</span>
         </div>
     </div>
 
@@ -102,48 +106,66 @@
         const translations = {
             de: {
                 title: "Datenschutzerklärung und Support",
-                intro: "Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten innerhalb meiner App \"Aurum - Klarheit über Geld\" auf.",
+                intro: "Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und Zweck der Verarbeitung von personenbezogenen Daten innerhalb meiner App \"Aurum – Budget & Haushaltsbuch\" auf.",
                 h_support: "1. Support",
                 p_support_1: "Benötigen Sie Hilfe oder haben Sie allgemeine Fragen zur App? Sie können mir jederzeit eine E-Mail schreiben:",
                 label_email_1: "E-Mail:",
-                h_storage: "2. Datenspeicherung",
+                
+                // NEU: Technischer Support
+                h_tech_support: "2. Technischer Support & Diagnose",
+                p_tech_support_1: "Bei Nutzung von „Support“ wird eine technische Support-Datei erstellt, die der Nutzer freiwillig versendet. Die Datei dient ausschließlich der Fehleranalyse und enthält nur technische Diagnoseinformationen (z. B. App-/OS-Version, Geräteklasse, Sprache/Region, Zeitzone, technische Status-/Zeitstempel, Funktions-Zähler, technisches UI-Ablaufprotokoll).",
+                p_tech_support_2: "Die Datei enthält <strong>keine Finanzinhalte</strong> (keine Beträge, keine Ausgabentexte/Notizen, keine Kategorienamen/Labelnamen, keine Export-/Import-Dateninhalte). Die Erstellung und Übermittlung erfolgt nur nach aktiver Nutzeraktion; ohne Versand findet keine Übermittlung statt. Empfänger ist die angegebene Support-Adresse; verarbeitet wird die Datei nur zur Bearbeitung des Supportfalls und danach gelöscht, sobald sie nicht mehr erforderlich ist.",
+
+                h_storage: "3. Datenspeicherung",
                 p_storage: "Sämtliche von Ihnen eingegebenen Budgetdaten werden ausschliesslich lokal auf Ihrem Gerät oder in Ihrem persönlichen iCloud-Speicher gesichert. Ich habe zu keinem Zeitpunkt Zugriff auf Ihre Finanzdaten.",
-                h_analytics: "3. Analysedaten (TestFlight)",
+                h_analytics: "4. Analysedaten (TestFlight)",
                 p_analytics: "Während der Beta-Phase über TestFlight werden Absturzberichte und Nutzungsinformationen an Apple und mich übermittelt, um die App zu verbessern. Dies ist eine Standardfunktion von Apple TestFlight.",
-                h_contact: "4. Kontakt (Datenschutz)",
+                h_contact: "5. Kontakt (Datenschutz)",
                 p_contact_1: "Bei spezifischen Fragen zum Thema Datenschutz wenden Sie sich bitte an:",
                 label_email_2: "E-mail:",
-                footer_text: "&copy; 2026 Aurum - Klarheit über Geld | Erstellt für den App Store mit SwiftUI in Switzerland 🇨🇭"
+                footer_text: "&copy; 2026 Aurum – Budget & Haushaltsbuch | Erstellt für den App Store mit SwiftUI in Switzerland 🇨🇭"
             },
             en: {
                 title: "Privacy Policy and Support",
-                intro: "This privacy policy explains the nature, scope, and purpose of the processing of personal data within my app \"Aurum - Clarity about money\".",
+                intro: "This privacy policy explains the nature, scope, and purpose of the processing of personal data within my app \"Aurum – Budget & Expenses\".",
                 h_support: "1. Support",
                 p_support_1: "Do you need help or have general questions about the app? You can email me at any time:",
                 label_email_1: "Email:",
-                h_storage: "2. Data Storage",
+                
+                // NEW: Technical Support
+                h_tech_support: "2. Technical Support & Diagnostics",
+                p_tech_support_1: "When using the \"Support\" feature, a technical support file is generated, which the user sends voluntarily. This file is used exclusively for error analysis and contains only technical diagnostic information (e.g., App/OS version, device class, language/region, time zone, technical status/timestamps, function counters, technical UI flow logs).",
+                p_tech_support_2: "The file contains <strong>no financial content</strong> (no amounts, no expense descriptions/notes, no category/label names, no export/import data). Generation and transmission occur only upon active user action; no transmission takes place without the user sending the file. The recipient is the specified support address; the file is processed solely for handling the support case and is deleted as soon as it is no longer required.",
+
+                h_storage: "3. Data Storage",
                 p_storage: "All budget data entered by you is stored exclusively locally on your device or in your personal iCloud storage. I do not have access to your financial data at any time.",
-                h_analytics: "3. Analytics (TestFlight)",
+                h_analytics: "4. Analytics (TestFlight)",
                 p_analytics: "During the beta phase via TestFlight, crash reports and usage information are transmitted to Apple and myself to improve the app. This is a standard feature of Apple TestFlight.",
-                h_contact: "4. Contact (Privacy)",
+                h_contact: "5. Contact (Privacy)",
                 p_contact_1: "For specific questions regarding data privacy, please contact:",
                 label_email_2: "Email:",
-                footer_text: "&copy; 2026 Aurum - Clarity about money | Made for the App Store with SwiftUI in Switzerland 🇨🇭"
+                footer_text: "&copy; 2026 Aurum – Budget & Expenses | Made for the App Store with SwiftUI in Switzerland 🇨🇭"
             },
             fr: {
                 title: "Politique de confidentialité et Support",
-                intro: "Cette politique de confidentialité explique la nature, l'étendue et la finalité du traitement des données personnelles au sein de mon application \"Aurum - La clarté sur l'argent\".",
+                intro: "Cette politique de confidentialité explique la nature, l'étendue et la finalité du traitement des données personnelles au sein de mon application \"Aurum – Budget & Dépenses\".",
                 h_support: "1. Support",
                 p_support_1: "Avez-vous besoin d'aide ou avez-vous des questions générales sur l'application ? Vous pouvez m'envoyer un e-mail à tout moment :",
                 label_email_1: "E-mail :",
-                h_storage: "2. Stockage des données",
+
+                // NOUVEAU: Support Technique
+                h_tech_support: "2. Support Technique & Diagnostic",
+                p_tech_support_1: "Lors de l'utilisation de la fonction « Support », un fichier de support technique est généré, que l'utilisateur envoie volontairement. Ce fichier sert exclusivement à l'analyse des erreurs et ne contient que des informations de diagnostic technique (par ex. version de l'App/OS, type d'appareil, langue/région, fuseau horaire, statuts/horodatages techniques, compteurs de fonctions, journal technique de l'interface utilisateur).",
+                p_tech_support_2: "Le fichier ne contient <strong>aucun contenu financier</strong> (aucun montant, aucun texte/note de dépense, aucun nom de catégorie/étiquette, aucune donnée d'exportation/importation). La création et la transmission ne se font qu'après une action active de l'utilisateur ; aucune transmission n'a lieu sans envoi. Le destinataire est l'adresse de support indiquée ; le fichier n'est traité que pour la gestion du cas de support et est supprimé dès qu'il n'est plus nécessaire.",
+
+                h_storage: "3. Stockage des données",
                 p_storage: "Toutes les données budgétaires saisies sont enregistrées exclusivement localement sur votre appareil ou dans votre stockage iCloud personnel. Je n'ai à aucun moment accès à vos données financières.",
-                h_analytics: "3. Analyse (TestFlight)",
+                h_analytics: "4. Analyse (TestFlight)",
                 p_analytics: "Pendant la phase bêta via TestFlight, des rapports de plantage et des informations d'utilisation sont transmis à Apple et à moi-même afin d'améliorer l'application. Il s'agit d'une fonctionnalité standard d'Apple TestFlight.",
-                h_contact: "4. Contact (Confidentialité)",
+                h_contact: "5. Contact (Confidentialité)",
                 p_contact_1: "Pour des questions spécifiques concernant la protection des données, veuillez contacter :",
                 label_email_2: "E-mail :",
-                footer_text: "&copy; 2026 Aurum - La clarté sur l'argent | Fait pour l'App Store avec SwiftUI en Suisse 🇨🇭"
+                footer_text: "&copy; 2026 Aurum – Budget & Dépenses | Fait pour l'App Store avec SwiftUI en Suisse 🇨🇭"
             },
             it: {
                 title: "Informativa sulla privacy e Supporto",
@@ -151,11 +173,17 @@
                 h_support: "1. Supporto",
                 p_support_1: "Hai bisogno di aiuto o hai domande generali sull'app? Puoi inviarmi un'e-mail in qualsiasi momento:",
                 label_email_1: "E-mail:",
-                h_storage: "2. Archiviazione dati",
+                
+                // Fallback to English for new section
+                h_tech_support: "2. Technical Support & Diagnostics",
+                p_tech_support_1: "When using the \"Support\" feature, a technical support file is generated, which the user sends voluntarily. This file is used exclusively for error analysis and contains only technical diagnostic information (e.g., App/OS version, device class, language/region, time zone, technical status/timestamps, function counters, technical UI flow logs).",
+                p_tech_support_2: "The file contains <strong>no financial content</strong> (no amounts, no expense descriptions/notes, no category/label names, no export/import data). Generation and transmission occur only upon active user action; no transmission takes place without the user sending the file. The recipient is the specified support address; the file is processed solely for handling the support case and is deleted as soon as it is no longer required.",
+
+                h_storage: "3. Archiviazione dati",
                 p_storage: "Tutti i dati di budget inseriti vengono salvati esclusivamente in locale sul tuo dispositivo o nel tuo spazio di archiviazione iCloud personale. Non ho accesso ai tuoi dati finanziari in nessun momento.",
-                h_analytics: "3. Analisi (TestFlight)",
+                h_analytics: "4. Analisi (TestFlight)",
                 p_analytics: "Durante la fase beta tramite TestFlight, i rapporti sugli arresti anomali e le informazioni sull'utilizzo vengono trasmessi ad Apple e a me per migliorare l'app. Questa è una funzionalità standard di Apple TestFlight.",
-                h_contact: "4. Contatto (Privacy)",
+                h_contact: "5. Contatto (Privacy)",
                 p_contact_1: "Per domande specifiche sulla protezione dei dati, si prega di contattare:",
                 label_email_2: "E-mail:",
                 footer_text: "&copy; 2026 Aurum - Chiarezza sul denaro | Realizzato per l'App Store con SwiftUI in Svizzera 🇨🇭"
@@ -166,11 +194,17 @@
                 h_support: "1. Soporte",
                 p_support_1: "¿Necesitas ayuda o tienes preguntas generales sobre la aplicación? Puedes enviarme un correo electrónico en cualquier momento:",
                 label_email_1: "Correo electrónico:",
-                h_storage: "2. Almacenamiento de datos",
+                
+                // Fallback to English for new section
+                h_tech_support: "2. Technical Support & Diagnostics",
+                p_tech_support_1: "When using the \"Support\" feature, a technical support file is generated, which the user sends voluntarily. This file is used exclusively for error analysis and contains only technical diagnostic information (e.g., App/OS version, device class, language/region, time zone, technical status/timestamps, function counters, technical UI flow logs).",
+                p_tech_support_2: "The file contains <strong>no financial content</strong> (no amounts, no expense descriptions/notes, no category/label names, no export/import data). Generation and transmission occur only upon active user action; no transmission takes place without the user sending the file. The recipient is the specified support address; the file is processed solely for handling the support case and is deleted as soon as it is no longer required.",
+
+                h_storage: "3. Almacenamiento de datos",
                 p_storage: "Todos los datos de presupuesto ingresados se guardan exclusivamente de forma local en tu dispositivo o en tu almacenamiento personal de iCloud. No tengo acceso a tus datos financieros en ningún momento.",
-                h_analytics: "3. Análisis (TestFlight)",
+                h_analytics: "4. Análisis (TestFlight)",
                 p_analytics: "Durante la fase beta a través de TestFlight, los informes de fallos y la información de uso se transmiten a Apple y a mí para mejorar la aplicación. Esta es una función estándar de Apple TestFlight.",
-                h_contact: "4. Contacto (Privacidad)",
+                h_contact: "5. Contacto (Privacidad)",
                 p_contact_1: "Para preguntas específicas sobre la protección de datos, por favor contacta a:",
                 label_email_2: "Correo electrónico:",
                 footer_text: "&copy; 2026 Aurum - Claridad sobre el dinero | Hecho para la App Store con SwiftUI en Suiza 🇨🇭"
@@ -191,6 +225,11 @@
             document.getElementById('p-support-1').textContent = t.p_support_1;
             document.getElementById('label-email-1').textContent = t.label_email_1;
             
+            // New Section
+            document.getElementById('h-tech-support').textContent = t.h_tech_support;
+            document.getElementById('p-tech-support-1').innerHTML = t.p_tech_support_1; // Use innerHTML for bold tag
+            document.getElementById('p-tech-support-2').innerHTML = t.p_tech_support_2; // Use innerHTML for bold tag
+
             document.getElementById('h-storage').textContent = t.h_storage;
             document.getElementById('p-storage').textContent = t.p_storage;
             
